@@ -1,0 +1,172 @@
+/* Estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+header img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* ESTILO DA PÁGINA DE PRIVACIDADE */
+
+main {
+    padding: 40px 10px;
+    background: #21489d; /* Fundo diferenciado para a página */
+}
+
+.about {
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 40px auto;
+    max-width: 1200px; /* Limita a largura do conteúdo */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+main h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+main p, main ul {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+main ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+main a {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+main a:hover {
+    color: #000000;
+}
+
+/* estilo rodape*/
+
+.footer img {
+    width: 140px;
+    height: auto;
+    margin-left: 20px;
+}
+
+section{
+    padding: 40px 5% 20px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 10.8rem;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave na parte superior */
+}
+
+h3 {
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
+#contato strong {
+    color: black; /* Escolha a cor desejada */
+}
+
+.footer-content h4 {
+    color: black;
+    margin-bottom: 1.5rem;
+    font-size: 20px;
+}
+
+.footer a{
+    color:black;
+}
+
+.footer-content {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Ajuste o gap para uma distância mais uniforme entre os itens */
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: all 0.4s;
+    color: black;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.icons a{
+    color: white;
+}
+
+#instagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#tiktok {
+    background-color: #000000;
+}
+
+#youtube{
+    background-color: #ff0000;
+}
+
+#footer-copyright {
+    display: flex;
+    justify-content: center;
+    color: black;
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+    padding: 40px 10.5% 20px;
+    font-weight: 100;
+}

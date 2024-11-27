@@ -1,0 +1,391 @@
+/* ESTILO GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Carvingsoft', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    height: 100vh;
+    overflow-x: hidden; /* Impede o scroll horizontal */
+    margin: 0; /* Garante que não haja margens externas */
+}
+
+.interface{
+    max-width: 1900px;
+}
+
+.flex {
+    display: flex;
+}
+
+/* ESTILO DO CABEÇALHO */
+
+.logo img{
+    width: 250px;
+    height: auto; /* Maintains the aspect ratio */
+}
+
+header {
+    background-color: #f8f9fa;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header .menu-desktop {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: 'Roboto';
+}
+
+header .menu-desktop ul li {
+    margin: 0 30px; /* Ajuste o valor conforme necessário */
+}
+
+header a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+header a:hover {
+    color: black;
+    transform: scale(1.05);
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav li {
+    margin: 0 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espaçamento entre os itens do menu */
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a i {
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+}
+
+.menu-desktop a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000000; /* Cor do underline */
+    bottom: 0;
+    left: 0;
+}
+
+header .matricula button{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 22px;
+    align-items: center;
+  	gap: 8px;
+    border: 0;
+    border-radius: 30px;
+  	background-color: #FFABF9;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Roboto';
+    cursor: pointer;
+}
+
+header .matricula button:hover{
+    box-shadow: 0px 0px 8px #849ea1;
+}
+
+/* Estilo Geral da Página FAQ */
+
+/* Estilo do Main */
+main {
+    padding: 120px 20px; /* Adiciona espaço interno para separar o conteúdo do fundo */
+    background: 
+        url('imagens/tradition\ up.png') no-repeat top center, /* Imagem superior */
+        url('imagens/tradition\ down.png') no-repeat bottom center, /* Imagem inferior */
+        #21489d; /* Cor de fundo */
+    background-size: 1300px; /* Ajusta o tamanho das imagens */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo do FAQ */
+#faq {
+    padding: 40px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#faq h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #21489d;
+    margin-bottom: 20px;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Respostas do FAQ */
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-left: 3px solid #21489d;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    overflow: hidden;
+}
+
+/* Perguntas */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #21489d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.faq-question .arrow {
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* estilo rodape*/
+
+.footer img {
+    width: 140px;
+    height: auto;
+    margin-left: 20px;
+}
+
+section{
+    padding: 40px 5% 20px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 10.8rem;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave na parte superior */
+}
+
+h3 {
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
+#contato strong {
+    color: black; /* Escolha a cor desejada */
+}
+
+.footer-content h4 {
+    color: black;
+    margin-bottom: 1.5rem;
+    font-size: 20px;
+}
+
+.footer a{
+    color:black;
+}
+
+.footer-content {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Ajuste o gap para uma distância mais uniforme entre os itens */
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: all 0.4s;
+    color: black;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.icons a{
+    color: white;
+}
+
+#instagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#tiktok {
+    background-color: #000000;
+}
+
+#youtube{
+    background-color: #ff0000;
+}
+
+#footer-copyright {
+    display: flex;
+    justify-content: center;
+    color: black;
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+    padding: 40px 10.5% 20px;
+    font-weight: 100;
+}
+
+/* Ajuste básico para telas menores */
+@media (max-width: 1200px) {
+    .header .menu-desktop ul li {
+        margin: 0 15px; /* Reduz espaçamento entre os itens */
+    }
+
+    header .matricula button {
+        font-size: 14px;
+        padding: 10px 18px; /* Ajusta o botão para telas menores */
+    }
+}
+
+/* Para tablets (largura menor que 768px) */
+@media (max-width: 768px) {
+    /* Ajusta o layout do cabeçalho */
+    header > .interface {
+        flex-direction: column; /* Coloca os elementos em coluna */
+        align-items: center;
+    }
+
+    .logo img {
+        width: 200px; /* Reduz o tamanho do logo */
+    }
+
+    .menu-desktop ul {
+        flex-direction: column; /* Coloca os itens do menu em coluna */
+        gap: 10px; /* Ajusta o espaçamento entre os itens */
+    }
+
+    .matricula-box {
+        width: 90%; /* Reduz a largura da caixa de matrícula */
+    }
+
+    /* Ajusta o FAQ */
+    #faq {
+        padding: 20px;
+    }
+
+    #faq h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Para celulares (largura menor que 480px) */
+@media (max-width: 480px) {
+    header {
+        margin-left: 10px;
+        margin-right: 10px; /* Reduz margens laterais no cabeçalho */
+    }
+
+    .logo img {
+        width: 150px; /* Reduz ainda mais o tamanho do logo */
+    }
+
+    .matricula-box {
+        padding: 20px; /* Reduz o preenchimento interno */
+    }
+
+    .matricula-box h2 {
+        font-size: 20px; /* Reduz o tamanho do título */
+    }
+
+    .matricula-box button {
+        font-size: 14px; /* Ajusta o tamanho do botão */
+        padding: 8px 16px;
+    }
+
+    /* Ajuste no rodapé */
+    /* Para dispositivos móveis (largura menor que 480px) */
+@media (max-width: 480px) {
+    .footer {
+        display: flex; /* Muda para flexbox para facilitar centralização */
+        flex-direction: column; /* Organiza os itens em coluna */
+        align-items: center; /* Centraliza os itens horizontalmente */
+        text-align: center; /* Alinha o texto no centro */
+    }
+
+    .footer-content {
+        align-items: center; /* Centraliza os itens internos */
+    }
+
+    .footer-content h4 {
+        text-align: center; /* Centraliza os títulos */
+    }
+
+    .footer a {
+        text-align: center; /* Centraliza os links */
+    }
+
+    #footer-copyright {
+        text-align: center; /* Centraliza o texto do copyright */
+    }
+
+    .icons {
+        justify-content: center; /* Alinha os ícones no centro */
+    }
+}
+
+}

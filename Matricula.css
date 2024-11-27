@@ -1,0 +1,91 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações gerais do body */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('imagens/traditional\ kor.png'); /* Substitua 'seu-fundo.jpg' pelo caminho da imagem */
+    background-size: cover; /* Faz com que a imagem cubra toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container principal */
+.container {
+    text-align: center;
+    position: relative;
+}
+
+/* Estilo do logo */
+.logo {
+    position: relative; /* Permite posicionamento acima da caixa */
+    top: 10%; /* Ajuste de posição vertical */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo img {
+    max-width: 250px; /* Ajuste o tamanho do logo conforme necessário */
+    margin-bottom: 0px;
+}
+
+/* Caixa de matrícula */
+.matricula-box {
+    background-color: #21489d;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 1000px; /* Ajuste a largura conforme necessário */
+}
+
+/* Título */
+.matricula-box h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: white;
+}
+
+/* Estilo do formulário */
+.matricula-box label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+    color: white;
+    text-align: left;
+}
+
+.matricula-box input,
+.matricula-box select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Botão de enviar */
+.matricula-box button {
+    background-color: #FFABF9;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.matricula-box button:hover {
+    background-color: #FFABF9;
+}

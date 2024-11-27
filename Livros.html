@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="Livros.css">
+    <title>Livros</title>
+</head>
+
+ <!-- Cabeçalho do site -->
+<header>
+ <div class="interface">
+  <div class="logo">
+      <a href="index.html" target="_self">
+          <img src="imagens/garam logo blc.svg" alt="logo do Garam">
+      </a>
+  </div><!--logo-->
+  
+  <nav class="menu-desktop">
+      <ul>
+           <li><a href="index.html" target="_self" class="nav-link" data-page="Início"><i class="fa-solid fa-house"></i>Home</a></li>
+           <li><a href="Curso.html" target="_self" class="nav-link" data-page="nav-link" data-page="Curso"><i class="fa-solid fa-star"></i>Curso</a></li>
+           <li><a href="Livros.html" class="nav-link active" target="_self" class="nav-link" data-page="Livros"><i class="fa-solid fa-book"></i>Livros</a></li>
+           <li><a href="FAQ.html" target="_self" class="nav-link" data-page="FAQ"><i class="fa-solid fa-circle-question"></i>FAQ</a></li>
+      </ul>
+  </nav>
+
+  <div class="matricula">
+    <a href="Matricula.html" target="_blank">
+        <button><div><i class="fa-solid fa-arrow-up-right-from-square"></i></div>Matricule-se</button>
+    </a>
+</div><!--perfil-->
+</div><!--interface-->
+</header>
+
+<body>
+  <div class="container">
+    <h1>Livros de apoio</h1>
+    <div class="book-grid">
+      <!-- Livro 1 -->
+      <div class="book-item">
+        <img src="imagens/Livro 1.jpg" alt="Livro 1">
+        <h3>Coreano Básico para Brasileiros 1</h3>
+        <p>Preço: R$ 69,90</p>
+        <button class="button" onclick="showInfo(this)">Ver mais informações</button>
+        <p class="book-info">Esgotado!</p>
+      </div>
+
+      <!-- Livro 2 -->
+      <div class="book-item">
+        <img src="imagens/Livro 2.jpg" alt="Livro 2">
+        <h3>Coreano Básico para Brasileiros 2</h3>
+        <p>Preço: R$ 69,90</p>
+        <button class="button" onclick="showInfo(this)">Ver mais informações</button>
+        <p class="book-info">Esgotado!</p>
+      </div>
+
+      <!-- Livro 3 -->
+      <div class="book-item">
+        <img src="imagens/Livro 3.jpg" alt="Livro 3">
+        <h3>Coreano Básico para Brasileiros 3</h3>
+        <p>Preço: R$ 69,90</p>
+        <button class="button" onclick="showInfo(this)">Ver mais informações</button>
+        <p class="book-info">Esgotado!</p>
+      </div>
+
+      <!-- Livro 4 -->
+      <div class="book-item">
+        <img src="imagens/Livro 4.jpg" alt="Livro 4">
+        <h3>Cultura e Idioma de Coreano 1</h3>
+        <p>Preço: R$ 74,90</p>
+        <button class="button" onclick="showInfo(this)">Ver mais informações</button>
+        <p class="book-info">Esgotado!</p>
+      </div>
+
+      <!-- Livro 5 -->
+      <div class="book-item">
+        <img src="imagens/Livro 5.jpg" alt="Livro 5">
+        <h3>Cultura e Idioma de Coreano 2</h3>
+        <p>Preço: R$ 74,90</p>
+        <button class="button" onclick="showInfo(this)">Ver mais informações</button>
+        <p class="book-info">Esgotado!</p>
+      </div>
+
+      <!-- Livro 6 -->
+      <div class="book-item">
+        <img src="imagens/Livro 6.jpg" alt="Livro 6">
+        <h3>Vocabulário Essencial Coreano 1</h3>
+        <p>Preço: R$ 79,90</p>
+        <button class="button" onclick="showInfo(this)">Ver mais informações</button>
+        <p class="book-info">Esgotado!</p>
+      </div>
+
+      <!-- Livro 7 -->
+      <div class="book-item">
+        <img src="imagens/Livro 7.jpg" alt="Livro 7">
+        <h3>Vocabulário Essencial Coreano 2</h3>
+        <p>Preço: R$ 79,90</p>
+        <button class="button" onclick="showInfo(this)">Ver mais informações</button>
+        <p class="book-info">Esgotado!</p>
+      </div>
+
+      <!-- Livro 8 -->
+      <div class="book-item">
+        <img src="imagens/Livro 8.jpg" alt="Livro 8">
+        <h3>Vocabulário Essencial Coreano 3</h3>
+        <p>Preço: R$ 79,90</p>
+        <button class="button" onclick="showInfo(this)">Ver mais informações</button>
+        <p class="book-info">Esgotado!</p>
+      </div>
+
+      <!-- Livro 9 -->
+      <div class="book-item">
+        <img src="imagens/Livro 9.jpg" alt="Livro 9">
+        <h3>Pronúncia Coreana Descomplicada 1</h3>
+        <p>Preço: R$ 89,90</p>
+        <button class="button" onclick="showInfo(this)">Ver mais informações</button>
+        <p class="book-info">Esgotado!</p>
+      </div>
+
+      <!-- Livro 10 -->
+      <div class="book-item">
+        <img src="imagens/Livro 10.jpg" alt="Livro 10">
+        <h3>Pronúncia Coreana Descomplicada 2</h3>
+        <p>Preço: R$ 89,90</p>
+        <button class="button" onclick="showInfo(this)">Ver mais informações</button>
+        <p class="book-info">Esgotado!</p>
+      </div>
+
+      <!-- Livro 11 -->
+      <div class="book-item">
+        <img src="imagens/Livro 11.jpg" alt="Livro 11">
+        <h3>Pronúncia Coreana Descomplicada 3</h3>
+        <p>Preço: R$ 89,90</p>
+        <button class="button" onclick="showInfo(this)">Ver mais informações</button>
+        <p class="book-info">Esgotado!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showInfo(button) {
+      const info = button.nextElementSibling;
+      info.style.display = "block";
+    }
+  </script>
+</body>
+</html>
+
+<!-- Rodapé do site -->
+<footer>
+  <section class="footer">
+      <div class="footer-content">
+          <img src="imagens/mugunfhwa.svg" alt="logo do Garam">
+      </div>
+
+      <div class="footer-content">
+          <h4>Curso</h4>
+          <li><a href="Sobre-nos.html" target="_blank">Sobre nós</a></li>
+          <li><a href="Livros.html">Livros de apoio</a></li>
+      </div>
+
+      <div class="footer-content">
+        <h4>Matricule-se</h4>
+        <li><a href="Matricula.html" target="_blank">Inscrição</a></li>
+        <li><a href="Curso.html">Cursos disponíveis</a></li>
+    </div>
+
+      <div class="footer-content">
+          <h4>Informações</h4>
+          <li><a href="FAQ.html">Ajuda/FAQ</a></li>
+          <li><a href="Termos.html " target="_blank">Termos de serviço</a></li>
+          <li><a href="Privacidade.html" target="_blank">Política de privacidade</a></li>
+          <li><a href="Reembolso.html" target="_blank">Política de Reembolso</a></li>
+      </div>
+
+      <div id="contato">
+          <h3>Contatos</h3>
+          <strong>Email:</strong> <a href="mailto:sabrinaleeyuna@gmail.com">garamkor@gmail.com</a>
+
+          <icons>
+            <div class="icons">
+                <a href="https://www.instagram.com/garam_kor/" class="footer-link" id="instagram" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@garam_kor" class="footer-link" id="tiktok" target="_blank">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/sua-conta" class="footer-link" id="youtube" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+          </icons>
+      </div>
+  </section>
+</footer>
+
+<div id="footer-copyright">
+  &#169 2024 Garam - Todos os direitos reservados
+</div>
+</html>

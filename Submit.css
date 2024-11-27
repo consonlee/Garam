@@ -1,0 +1,62 @@
+/* Define um estilo básico para toda a página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('imagens/traditional\ kor.png'); /* Substitua 'seu-fundo.jpg' pelo caminho da imagem */
+    background-size: cover; /* Faz com que a imagem cubra toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Centraliza o conteúdo em um contêiner */
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 30px; /* Aumenta o espaço interno */
+    border-radius: 15px; /* Cantos mais arredondados */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); /* Sombra mais destacada */
+    max-width: 500px; /* Aumenta a largura máxima */
+    width: 90%;
+}
+
+/* Estiliza o logo */
+.logo {
+    max-width: 200px; /* Aumenta o tamanho máximo do logo */
+    margin-bottom: 30px; /* Maior espaço abaixo do logo */
+}
+
+/* Estiliza o título */
+h1 {
+    font-size: 32px; /* Aumenta o tamanho da fonte */
+    color: #000000;
+    margin-bottom: 15px; /* Aumenta o espaço abaixo do título */
+}
+
+/* Estiliza o texto */
+p {
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    color: #000000;
+    margin-bottom: 25px; /* Aumenta o espaço abaixo do texto */
+}
+
+/* Estiliza o botão */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #FFABF9; /* Rosa */
+    color: #000000;
+    padding: 15px 30px; /* Aumenta o tamanho do botão */
+    border-radius: 8px; /* Cantos mais arredondados */
+    font-size: 18px; /* Aumenta o tamanho do texto no botão */
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover no botão */
+.btn:hover {
+    background-color: #FF85E0; /* Rosa mais claro */
+}

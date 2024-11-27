@@ -1,0 +1,809 @@
+@font-face {
+    font-family: 'Cravingsoft'; /* Nome para usar no CSS */
+    src: url('fonts/Cravingsoft.otf') format('truetype'); /* Caminho para o arquivo da fonte */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ESTILO GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Carvingsoft', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    height: 100vh;
+    overflow-x: hidden; /* Impede o scroll horizontal */
+    margin: 0; /* Garante que não haja margens externas */
+}
+
+.interface{
+    max-width: 1900px;
+}
+
+.flex {
+    display: flex;
+}
+
+
+/* ESTILO DO CABEÇALHO */
+
+.logo img{
+    width: 250px;
+    height: auto; /* Maintains the aspect ratio */
+}
+
+header {
+    background-color: #f8f9fa;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header .menu-desktop {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: 'Roboto';
+}
+
+header .menu-desktop ul li {
+    margin: 0 30px; /* Ajuste o valor conforme necessário */
+}
+
+header a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+header a:hover {
+    color: black;
+    transform: scale(1.05);
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav li {
+    margin: 0 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espaçamento entre os itens do menu */
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a i {
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+}
+
+.menu-desktop a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000000; /* Cor do underline */
+    bottom: 0;
+    left: 0;
+}
+
+header .matricula button{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 22px;
+    align-items: center;
+  	gap: 8px;
+    border: 0;
+    border-radius: 30px;
+  	background-color: #FFABF9;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Roboto';
+    cursor: pointer;
+}
+
+header .matricula button:hover{
+    box-shadow: 0px 0px 8px #849ea1;
+}
+
+/* estilo do topo do site */
+
+main {
+    max-width: 3000px;
+    background-color: #21489d;
+}
+
+section.topo-do-site {
+    padding: 50px 5%;
+}
+
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+}
+
+.topo-do-site h1 {
+    color: #ffffff;
+    font-size: 60px;
+    line-height: 40px;
+    margin-left: 20px;
+    line-height: 1.6;
+    
+}
+
+.topo-do-site .txt-topo p {
+    color: #ffffff;
+    font-size: 25px;
+    margin: 40px 0;
+    width: 85%;
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+.topo-do-site .img-topo-site img{
+    position: relative;
+    height: 450px;
+    width: auto;
+}
+
+/* Container principal */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #21489d;
+}
+
+.door {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-image: url('imagens/porta.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: 200% 100%; /* Divide a imagem em duas metades horizontais */
+    background-repeat: no-repeat;
+    z-index: 2; /* As portas ficam acima inicialmente */
+    transition: transform 1.5s ease-in-out;
+}
+
+.door-left {
+    left: 0;
+    background-position: left;
+    transform: translateX(0); /* Posição inicial fechada */
+}
+
+.door-right {
+    right: 0;
+    background-position: right;
+    transform: translateX(0); /* Posição inicial fechada */
+}
+
+/* Animação para abrir portas */
+.container.open .door-left {
+    transform: translateX(-100%);
+}
+
+.container.open .door-right {
+    transform: translateX(100%);
+}
+
+/* Conteúdo revelado */
+.reveal-content {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre a imagem e o texto */
+    position: absolute;
+    z-index: 1; /* Inicialmente atrás das portas */
+    opacity: 0; /* Invisível quando portas estão fechadas */
+    transition: opacity 1.5s ease-in-out; /* Transição de visibilidade */
+}
+
+.container.open .reveal-content {
+    z-index: 1; /* Aparece acima das portas abertas */
+    opacity: 1; /* Torna o conteúdo visível */
+}
+
+.reveal-image {
+    flex: 1; /* Ajusta largura proporcional */
+    max-width: 40%; /* Largura máxima da imagem */
+    height: auto; /* Mantém proporção */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-left: 40px;
+    padding: 40px 4%;
+    margin-top: 80px; /* Adiciona espaço entre a imagem e o topo */
+    margin-bottom: 80px;
+}
+
+.text {  
+    /* Imagens de fundo */
+    background-image: 
+        url('imagens/tradition\ up.png'), /* Imagem superior */
+        url('imagens/tradition\ down.png'); /* Imagem inferior */
+    background-repeat: no-repeat, no-repeat; /* Evita repetição das imagens */
+    background-position: top -20px center, bottom -20px center; /* Posiciona no topo e na base */
+    background-size: 100% auto; /* Ajusta a largura ao texto */
+    background-attachment: local; /* Mantém a posição relativa ao texto */
+    margin-left: 40px;
+    margin-right: 40px;
+    
+    color: #ffffff; /* Ajusta a cor do texto */
+}
+
+.reveal-text {
+    flex: 1;
+    font-size: 20px; /* Ajusta o tamanho do texto */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    max-width: 70%; /* Largura máxima do texto */
+    text-align: justify; /* Alinha o texto */
+    padding: 50px; /* Espaço interno */
+    margin: 0 auto; /* Centraliza o texto */
+}
+
+/* Estilos base já definidos anteriormente */
+
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .reveal-content {
+        flex-direction: column; /* Empilha os elementos em uma coluna */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .reveal-image {
+        max-width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+        margin: 20px auto; /* Adiciona margem para centralizar */
+        padding: 0; /* Remove padding adicional em telas menores */
+    }
+
+    .reveal-text {
+        max-width: 100%; /* Faz o texto ocupar toda a largura */
+        padding: 20px; /* Reduz o padding interno */
+    }
+
+    .topo-do-site h1 {
+        font-size: 40px; /* Reduz tamanho do título */
+    }
+
+    .topo-do-site .txt-topo p {
+        font-size: 18px; /* Ajusta tamanho do texto */
+    }
+
+    .topo-do-site .img-topo-site img {
+        height: auto; /* Ajusta altura para manter proporção */
+        max-width: 100%; /* Garante que a imagem não ultrapasse a largura */
+        margin: 20px 0; /* Espaço ao redor da imagem */
+    }
+
+    .door {
+        background-size: cover; /* Ajusta a imagem das portas para caber melhor */
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media screen and (max-width: 480px) {
+    .reveal-text {
+        font-size: 16px; /* Reduz tamanho do texto */
+        line-height: 1.4; /* Ajusta espaçamento entre linhas */
+    }
+
+    .reveal-image {
+        max-width: 100%; /* Garante que a imagem preencha a largura disponível */
+    }
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    .reveal-text {
+        font-size: 16px; /* Reduz o tamanho do texto */
+        padding: 20px 4%; /* Ajusta o padding */
+        max-width: 80%; /* Aumenta o espaço para o texto */
+        background-size: 90%, 90%; /* Ajusta o tamanho do background */
+        background-position: top 5% center, bottom 5% center; /* Ajusta a posição */
+    }
+
+    .reveal-image {
+        max-width: 70%; /* Ajusta a largura da imagem */
+        margin: 20px auto; /* Centraliza a imagem */
+    }
+}
+
+@media (max-width: 480px) {
+    .reveal-text {
+        font-size: 14px; /* Reduz ainda mais o texto */
+        padding: 10px 2%; /* Ajusta o padding */
+        max-width: 100%; /* Ocupa a largura completa */
+        background-size: 100%, 100%; /* Background cobre melhor o texto */
+        background-position: top center, bottom center; /* Centraliza as imagens */
+    }
+}
+
+/* feedback */
+
+#depoimentos {
+    text-align: center;
+    margin: 20px;
+    margin-top: 75px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.feedback-carousel input[type="radio"]:checked + .content {
+    display: block; /* Garante que o item exibido tenha o conteúdo mostrado */
+}
+
+.feedback-carousel {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    overflow: visible; /* Permite que as setas fiquem visíveis fora do contêiner */
+    padding: 0 50px; /* Espaço adicional para setas fora do contêiner */
+}
+  
+.carousel-container {
+    overflow: hidden;
+}
+  
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+  
+.depoimento {
+    flex: 0 0 31%; /* Três itens por vez */
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: left;
+}
+  
+.box {
+    background-color: #fff; /* Fundo branco */
+    border: 1px solid #ddd; /* Borda cinza */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 20px;
+    margin: 10px;
+}
+  
+.box p {
+    margin: 10px 0;
+}
+  
+.box strong {
+    font-size: 18px;
+    color: #21489d; /* Destaque para o título */
+}
+  
+.box .autor {
+    font-style: italic;
+    color: #555;
+}
+  
+/* Botões de Navegação */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #21489d;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+  
+.arrow:hover {
+    background-color: #21489d;
+}
+  
+.left-arrow {
+    left: -40px; /* Move para fora do contêiner */
+}
+  
+.right-arrow {
+    right: -40px; /* Move para fora do contêiner */
+}
+  
+/* Carrossel usando radio buttons */
+input[type="radio"] {
+    display: none;
+}
+  
+#item-1:checked ~ .carousel-container .carousel-inner {
+    transform: translateX(0%);
+}
+  
+ #item-2:checked ~ .carousel-container .carousel-inner {
+    transform: translateX(-33.333%);
+}
+  
+#item-3:checked ~ .carousel-container .carousel-inner {
+    transform: translateX(-66.666%);
+}
+  
+#item-4:checked ~ .carousel-container .carousel-inner {
+    transform: translateX(-100%);
+}
+  
+#item-5:checked ~ .carousel-container .carousel-inner {
+    transform: translateX(-133.333%);
+}
+  
+/* matricula */
+
+/* Container que envolve o formulário e a imagem */
+#matricula-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Espaço entre o formulário e a imagem */
+    margin: 30px 0;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+/* Estilo para o formulário */
+#matricula { 
+    padding: 40px 4%;
+    text-align: left;
+    background-color: #21489d;
+    border-radius: 8px;
+    width: 45%; /* Define a largura do formulário */
+}
+
+/* Estilo do título e descrição */
+#matricula h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+#matricula p {
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* Estilo do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo dos campos do formulário */
+label {
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: white;
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Estilo do botão */
+button[type="submit"] {
+    background-color: #FFABF9;
+    color: black;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #bb7db7;
+}
+
+/* Estilo para a imagem */
+#imagem-container {
+    width: 46.5%; /* Define a largura da imagem */
+}
+
+#imagem-container img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do container */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    #matricula-container {
+        flex-direction: column; /* Empilha os itens em telas menores */
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #imagem-container {
+        width: 100%; /* A imagem ocupa toda a largura disponível */
+        margin-top: 20px;
+    }
+
+    #matricula {
+        width: 100%; /* O formulário ocupa toda a largura */
+    }
+}
+
+/* estilo rodape*/
+
+.footer img {
+    width: 140px;
+    height: auto;
+    margin-left: 20px;
+}
+
+section{
+    padding: 40px 5% 20px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 10.8rem;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave na parte superior */
+}
+
+h3 {
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
+#contato strong {
+    color: black; /* Escolha a cor desejada */
+}
+
+.footer-content h4 {
+    color: black;
+    margin-bottom: 1.5rem;
+    font-size: 20px;
+}
+
+.footer a{
+    color:black;
+}
+
+.footer-content {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Ajuste o gap para uma distância mais uniforme entre os itens */
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: all 0.4s;
+    color: black;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.icons a{
+    color: white;
+}
+
+#instagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#tiktok {
+    background-color: #000000;
+}
+
+#youtube{
+    background-color: #ff0000;
+}
+
+#footer-copyright {
+    display: flex;
+    justify-content: center;
+    color: black;
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+    padding: 40px 10.5% 20px;
+    font-weight: 100;
+}
+
+/* Ajuste básico para telas menores */
+@media (max-width: 1200px) {
+    .header .menu-desktop ul li {
+        margin: 0 15px; /* Reduz espaçamento entre os itens */
+    }
+
+    header .matricula button {
+        font-size: 14px;
+        padding: 10px 18px; /* Ajusta o botão para telas menores */
+    }
+}
+
+/* Para tablets (largura menor que 768px) */
+@media (max-width: 768px) {
+    /* Ajusta o layout do cabeçalho */
+    header > .interface {
+        flex-direction: column; /* Coloca os elementos em coluna */
+        align-items: center;
+    }
+
+    .logo img {
+        width: 200px; /* Reduz o tamanho do logo */
+    }
+
+    .menu-desktop ul {
+        flex-direction: column; /* Coloca os itens do menu em coluna */
+        gap: 10px; /* Ajusta o espaçamento entre os itens */
+    }
+
+    .matricula-box {
+        width: 90%; /* Reduz a largura da caixa de matrícula */
+    }
+}
+
+/* Pequenos dispositivos */
+@media (max-width: 768px) {
+    header .menu-desktop ul li {
+        margin: 0 5px;
+    }
+
+    .topo-do-site h1 {
+        font-size: 32px;
+    }
+
+    .topo-do-site p {
+        font-size: 16px;
+    }
+
+    .reveal-text {
+        font-size: 14px;
+    }
+
+    .feedback-carousel .depoimento {
+        flex: 1 1 100%; /* Uma coluna */
+    }
+
+    .footer {
+        padding: 20px;
+    }
+}
+
+/* Muito pequenos dispositivos */
+@media (max-width: 480px) {
+    header .menu-desktop {
+        flex-wrap: wrap;
+        font-size: 14px;
+    }
+
+    header .matricula button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .topo-do-site h1 {
+        font-size: 24px;
+    }
+
+    .topo-do-site p {
+        font-size: 14px;
+    }
+
+    .reveal-content {
+        font-size: 12px;
+    }
+
+    #matricula {
+        padding: 10px;
+    }
+
+    .footer h3 {
+        font-size: 16px;
+    }
+}
+
+/* Para celulares (largura menor que 480px) */
+@media (max-width: 480px) {
+    header {
+        margin-left: 10px;
+        margin-right: 10px; /* Reduz margens laterais no cabeçalho */
+    }
+
+    .logo img {
+        width: 150px; /* Reduz ainda mais o tamanho do logo */
+    }
+
+    .matricula-box {
+        padding: 20px; /* Reduz o preenchimento interno */
+    }
+
+    .matricula-box h2 {
+        font-size: 20px; /* Reduz o tamanho do título */
+    }
+
+    .matricula-box button {
+        font-size: 14px; /* Ajusta o tamanho do botão */
+        padding: 8px 16px;
+    }
+
+    /* Ajuste no rodapé */
+    /* Para dispositivos móveis (largura menor que 480px) */
+@media (max-width: 480px) {
+    .footer {
+        display: flex; /* Muda para flexbox para facilitar centralização */
+        flex-direction: column; /* Organiza os itens em coluna */
+        align-items: center; /* Centraliza os itens horizontalmente */
+        text-align: center; /* Alinha o texto no centro */
+    }
+
+    .footer-content {
+        align-items: center; /* Centraliza os itens internos */
+    }
+
+    .footer-content h4 {
+        text-align: center; /* Centraliza os títulos */
+    }
+
+    .footer a {
+        text-align: center; /* Centraliza os links */
+    }
+
+    #footer-copyright {
+        text-align: center; /* Centraliza o texto do copyright */
+    }
+
+    .icons {
+        justify-content: center; /* Alinha os ícones no centro */
+    }
+}
+
+}
+
