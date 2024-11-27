@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrícula</title>
+    <link rel="stylesheet" href="Matricula.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo Garam -->
+        <div class="logo">
+            <img src="imagens/garam logo blc.svg" alt="Logo Garam">
+        </div>
+        <!-- Caixa de matrícula -->
+        <div class="matricula-box">
+            <h2>Faça sua Matrícula</h2>
+            <form action="Submit.html" method="post">
+                <label for="name">Nome completo</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                
+                <label for="telefone">Telefone</label>
+                <input 
+                    type="tel" 
+                    id="telefone" 
+                    name="telefone" 
+                    placeholder="(XX) XXXXX-XXXX" 
+                    maxlength="15" 
+                    required 
+                    oninput="formatarTelefone(this)">
+
+                
+                <button type="submit">Matricule-se</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="Matricula.js"></script>
+
+</body>
+</html>
