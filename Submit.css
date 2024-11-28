@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('imagens/traditional\kor.png'); /* Substitua 'seu-fundo.jpg' pelo caminho da imagem */
+    background-image: url('imagens/traditional\ kor.png'); /* Substitua 'seu-fundo.jpg' pelo caminho da imagem */
     background-size: cover; /* Faz com que a imagem cubra toda a tela */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
