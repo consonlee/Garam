@@ -25,7 +25,7 @@ body {
 }
 
 .flex {
-    display: flex;
+    display: contents;
 }
 
 
@@ -154,24 +154,27 @@ section.topo-do-site .flex {
     color: #ffffff;
     font-size: 60px;
     line-height: 40px;
-    margin-left: 20px;
     line-height: 1.6;
-    
+    text-align: center;
 }
 
 .topo-do-site .txt-topo p {
     color: #ffffff;
     font-size: 25px;
     margin: 40px 0;
-    width: 85%;
-    margin-left: 20px;
+    width: 100%;
     line-height: 1.6;
+    text-align: justify;
 }
 
-.topo-do-site .img-topo-site img{
+.img-topo-site img{
     position: relative;
     height: 450px;
     width: auto;
+    display: block; /* Remove o comportamento inline da imagem */
+    margin-left: auto; /* Adiciona margem automática à esquerda */
+    margin-right: auto; /* Adiciona margem automática à direita */
+    max-width: 100%; /* Garante que a imagem não ultrapasse o limite do contêiner */
 }
 
 /* Container principal */
@@ -262,7 +265,6 @@ section.topo-do-site .flex {
 
 .reveal-text {
     flex: 1;
-    font-size: 20px; /* Ajusta o tamanho do texto */
     line-height: 1.6; /* Espaçamento entre linhas */
     max-width: 70%; /* Largura máxima do texto */
     text-align: justify; /* Alinha o texto */
@@ -287,23 +289,13 @@ section.topo-do-site .flex {
 
     .reveal-text {
         max-width: 100%; /* Faz o texto ocupar toda a largura */
-        padding: 20px; /* Reduz o padding interno */
+        padding: 10px; /* Reduz o padding interno */
     }
 
-    .topo-do-site h1 {
-        font-size: 40px; /* Reduz tamanho do título */
+    .text {
+        background-image: none;
     }
-
-    .topo-do-site .txt-topo p {
-        font-size: 18px; /* Ajusta tamanho do texto */
-    }
-
-    .topo-do-site .img-topo-site img {
-        height: auto; /* Ajusta altura para manter proporção */
-        max-width: 100%; /* Garante que a imagem não ultrapasse a largura */
-        margin: 20px 0; /* Espaço ao redor da imagem */
-    }
-
+    
     .door {
         background-size: cover; /* Ajusta a imagem das portas para caber melhor */
     }
@@ -312,7 +304,6 @@ section.topo-do-site .flex {
 /* Ajustes para telas muito pequenas */
 @media screen and (max-width: 480px) {
     .reveal-text {
-        font-size: 16px; /* Reduz tamanho do texto */
         line-height: 1.4; /* Ajusta espaçamento entre linhas */
     }
 
@@ -321,30 +312,27 @@ section.topo-do-site .flex {
     }
 }
 
-/* Media queries para responsividade */
 @media (max-width: 768px) {
-    .reveal-text {
-        font-size: 16px; /* Reduz o tamanho do texto */
-        padding: 20px 4%; /* Ajusta o padding */
-        max-width: 80%; /* Aumenta o espaço para o texto */
-        background-size: 90%, 90%; /* Ajusta o tamanho do background */
-        background-position: top 5% center, bottom 5% center; /* Ajusta a posição */
-    }
-
-    .reveal-image {
-        max-width: 70%; /* Ajusta a largura da imagem */
-        margin: 20px auto; /* Centraliza a imagem */
-    }
+   
+.topo-do-site {
+    flex-direction: column; /* Empilha os itens em telas menores */
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-@media (max-width: 480px) {
-    .reveal-text {
-        font-size: 14px; /* Reduz ainda mais o texto */
-        padding: 10px 2%; /* Ajusta o padding */
-        max-width: 100%; /* Ocupa a largura completa */
-        background-size: 100%, 100%; /* Background cobre melhor o texto */
-        background-position: top center, bottom center; /* Centraliza as imagens */
-    }
+.topo-do-site h1 {
+    font-size: 32px; /* Ajusta o tamanho do título */
+}
+
+.topo-do-site p {
+    font-size: 10px; /* Ajusta o tamanho do texto */
+    margin: 10px 0; /* Adiciona espaçamento ao redor do texto */
+}
+
+.topo-do-site .img-topo-site img {
+    height: auto; /* Ajusta a altura para manter a proporção */
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura */
+}
 }
 
 /* feedback */
@@ -705,7 +693,7 @@ h3 {
     }
 
     .reveal-text {
-        font-size: 14px;
+        font-size: 11px;
     }
 
     .feedback-carousel .depoimento {
@@ -730,15 +718,11 @@ h3 {
     }
 
     .topo-do-site h1 {
-        font-size: 24px;
+        font-size: 30px;
     }
 
     .topo-do-site p {
-        font-size: 14px;
-    }
-
-    .reveal-content {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     #matricula {
@@ -806,4 +790,3 @@ h3 {
 }
 
 }
-
