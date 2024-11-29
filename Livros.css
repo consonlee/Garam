@@ -304,6 +304,7 @@ h3 {
 
 /* RESPONSIVIDADE */
 
+/* Ajuste básico para telas menores */
 @media (max-width: 1200px) {
   .header .menu-desktop ul li {
       margin: 0 15px; /* Reduz espaçamento entre os itens */
@@ -335,87 +336,70 @@ h3 {
   .matricula-box {
       width: 90%; /* Reduz a largura da caixa de matrícula */
   }
+
+  /* Ajusta o FAQ */
+  #faq {
+      padding: 20px;
+  }
+
+  #faq h2 {
+      font-size: 1.5rem;
+  }
 }
 
-/* Dispositivos pequenos (smartphones em modo retrato) */
-@media (max-width: 576px) {
-    body {
-      padding: 0 15px; /* Garante que o conteúdo não encoste nas bordas */
-    }
-  
-    .interface {
-      margin: 0 auto;
-      padding: 0;
-    }
-  
-    header .menu-desktop {
-      display: none; /* Ocultar menu desktop em dispositivos pequenos */
-    }
-  
-    .footer {
-      grid-template-columns: 1fr; /* Empilha as colunas do rodapé */
-      text-align: center; /* Centraliza os textos no rodapé */
-    }
-  
-    .footer-content {
-      align-items: center;
-    }
-  
-    .icons {
-      justify-content: center; /* Centraliza os ícones sociais */
-    }
-  
-    #footer-copyright {
-      flex-direction: column;
-      text-align: center;
-      padding: 20px;
-    }
-  
-    header .matricula button {
-      font-size: 14px;
-      padding: 8px 12px;
-    }
-  
-    .logo img {
-      width: 200px; /* Reduz o tamanho da logo em telas pequenas */
-    }
+/* Para celulares (largura menor que 480px) */
+@media (max-width: 480px) {
+  header {
+      margin-left: 10px;
+      margin-right: 10px; /* Reduz margens laterais no cabeçalho */
+  }
 
-    header .menu-desktop {
-      flex-direction: column;
+  .logo img {
+      width: 150px; /* Reduz ainda mais o tamanho do logo */
   }
+
+  .matricula-box {
+      padding: 20px; /* Reduz o preenchimento interno */
   }
-  
-  /* Tablets em modo retrato */
-  @media (min-width: 577px) and (max-width: 768px) {
-    header .menu-desktop ul li {
-      margin: 0 15px; /* Ajusta o espaçamento no menu */
-    }
-  
-    .book-grid {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta o grid de livros */
-    }
-  
-    .footer {
-      grid-template-columns: repeat(auto-fit, minmax(150px, auto)); /* Ajusta colunas do rodapé */
-      gap: 2rem;
-    }
+
+  .matricula-box h2 {
+      font-size: 20px; /* Reduz o tamanho do título */
   }
-  
-  /* Dispositivos médios (notebooks pequenos) */
-  @media (min-width: 769px) and (max-width: 1200px) {
-    .logo img {
-      width: 220px; /* Tamanho intermediário para logo */
-    }
-  
-    header .menu-desktop ul li {
-      margin: 0 20px; /* Espaçamento intermediário */
-    }
-  
-    .book-grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adapta grid de livros */
-    }
-  
-    .footer {
-      gap: 2.5rem; /* Ajusta o espaçamento entre os elementos */
-    }
-  }  
+
+  .matricula-box button {
+      font-size: 14px; /* Ajusta o tamanho do botão */
+      padding: 8px 16px;
+  }
+
+  /* Ajuste no rodapé */
+  /* Para dispositivos móveis (largura menor que 480px) */
+@media (max-width: 480px) {
+  .footer {
+      display: flex; /* Muda para flexbox para facilitar centralização */
+      flex-direction: column; /* Organiza os itens em coluna */
+      align-items: center; /* Centraliza os itens horizontalmente */
+      text-align: center; /* Alinha o texto no centro */
+  }
+
+  .footer-content {
+      align-items: center; /* Centraliza os itens internos */
+  }
+
+  .footer-content h4 {
+      text-align: center; /* Centraliza os títulos */
+  }
+
+  .footer a {
+      text-align: center; /* Centraliza os links */
+  }
+
+  #footer-copyright {
+      text-align: center; /* Centraliza o texto do copyright */
+  }
+
+  .icons {
+      justify-content: center; /* Alinha os ícones no centro */
+  }
+}
+
+}  
